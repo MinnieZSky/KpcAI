@@ -40,7 +40,7 @@ export const localKey = import.meta.env.OPENAI_API_KEY || ""
 //export const localKey = sendkey
 export const baseURL = import.meta.env.NOGFW
 //const key= process.env.SENDKEY
-export const sendkey=import.meta.env.OPENAI_API_KEY
+//export const sendkey=import.meta.env.OPENAI_API_KEY
   ? "api.openai.com"
   : (import.meta.env.OPENAI_API_BASE_URL || "api.openai.com").replace(
       /^https?:\/\//,
@@ -88,7 +88,7 @@ export const post: APIRoute = async context => {
     //throw new Error("Key "+key+"||"+localKey)
     //throw new Error("Key length "+Object.keys(process.env)[1].toString()+"="+process.env[Object.keys(process.env)[1]].toString())
     //const sendkey=process.env.SENDKEY
-    return new Response(sendkey)
+    return new Response(localKey)
     if (pwd && pwd !== password) {
       throw new Error("密码错误，请联系网站管理员。")
     }
