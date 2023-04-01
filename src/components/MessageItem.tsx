@@ -5,8 +5,8 @@ import "../styles/message.css"
 import "../styles/clipboard.css"
 import { useCopyCode } from "~/hooks"
 import { copyToClipboard } from "~/utils"
-import vercel from "/assets/vercel.svg?raw"
-import openai from "/assets/openai.svg?raw"
+//import vercel from "/assets/vercel.svg?raw"
+//import openai from "/assets/openai.svg?raw"
 import md from "~/markdown-it"
 
 interface Props {
@@ -132,14 +132,15 @@ export default (props: Props) => {
         class="message prose prose-slate dark:prose-invert dark:text-slate break-words overflow-hidden"
         innerHTML={md
           .render(props.message.content)
-          .replace(
-            /Vercel/g,
-            `<a href="http://vercel.com/?utm_source=busiyi&utm_campaign=oss" style="border-bottom:0">${vercel}</a>`
-          )
-          .replace(
-            /OpenAI/g,
-            `<a href="https://www.openai.com" style="border-bottom:0">${openai}</a>`
-          )}
+ //         .replace(
+ //           /Vercel/g,
+ //           `<a href="http://vercel.com/?utm_source=busiyi&utm_campaign=oss" style="border-bottom:0">${vercel}</a>`
+ //         )
+ //         .replace(
+ //           /OpenAI/g,
+ //           `<a href="https://www.openai.com" style="border-bottom:0">${openai}</a>`
+//          )
+        }
       />
       <MessageAction
         del={del}
