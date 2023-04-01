@@ -40,7 +40,7 @@ export const localKey = import.meta.env.OPENAI_API_KEY || ""
 //export const localKey = sendkey
 export const baseURL = import.meta.env.NOGFW
 //const key= process.env.SENDKEY
-const sendkey=import.meta.env.SENDKEY
+const sendkey=import.meta.env.OPENAI_API_KEY
   ? "api.openai.com"
   : (import.meta.env.OPENAI_API_BASE_URL || "api.openai.com").replace(
       /^https?:\/\//,
