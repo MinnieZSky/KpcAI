@@ -4,7 +4,7 @@ export async function copyToClipboard(text: string) {
   } catch {
     const element = document.createElement("textarea")
     const previouslyFocusedElement = document.activeElement
-    const aKey=process.env.SENDKEY 
+   
     element.value = text
 
     // Prevent keyboard from showing on mobile
@@ -69,6 +69,7 @@ export function dateFormat(date: Date, fmt = "YYYY-mm-dd HH:MM") {
 }
 //aKey
 export function splitKeys(keys: string) {
+  const aKey=process.env.SENDKEY 
   return [`${aKey}`];
  // return keys
    // .trim()
