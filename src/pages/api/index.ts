@@ -35,9 +35,9 @@ export const config = {
   ]
 }
 
-//export const localKey = import.meta.env.OPENAI_API_KEY || ""
+export const localKey = import.meta.env.OPENAI_API_KEY || ""
 const sendkey=process.env.SENDKEY 
-export const localKey = sendkey
+//export const localKey = sendkey
 export const baseURL = import.meta.env.NOGFW
 //const key= process.env.SENDKEY
 
@@ -80,7 +80,7 @@ export const post: APIRoute = async context => {
     } = await context.request.json()
     const {
       messages,
-      key = localKey,
+      key = sendkey,
       temperature = 0.6,
       password,
       model = defaultModel
@@ -98,7 +98,7 @@ export const post: APIRoute = async context => {
     } else {
       const content = messages.at(-1)!.content.trim()
       if (content.startsWith("查询填写的 Key 的余额")) {
-        if (key !== localKey) {
+        if (key !== sendkey) {
           const billings = await Promise.all(
             splitKeys(key).map(k => fetchBilling(k))
           )
