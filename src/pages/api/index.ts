@@ -88,7 +88,7 @@ export const post: APIRoute = async context => {
     //throw new Error("Key "+key+"||"+localKey)
     //throw new Error("Key length "+Object.keys(process.env)[1].toString()+"="+process.env[Object.keys(process.env)[1]].toString())
     //const sendkey=process.env.SENDKEY
-    return new Response(localKey)
+    return new Response(key)
     if (pwd && pwd !== password) {
       throw new Error("密码错误，请联系网站管理员。")
     }
