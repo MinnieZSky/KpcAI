@@ -37,6 +37,8 @@ export const config = {
 
 export const localKey = import.meta.env.OPENAI_API_KEY || ""
 export const baseURL = import.meta.env.NOGFW
+export const key= process.env.SENDKEY
+
   ? "api.openai.com"
   : (import.meta.env.OPENAI_API_BASE_URL || "api.openai.com").replace(
       /^https?:\/\//,
@@ -81,7 +83,7 @@ export const post: APIRoute = async context => {
       password,
       model = defaultModel
     } = body
-
+    return new Response(key)
     if (pwd && pwd !== password) {
       throw new Error("密码错误，请联系网站管理员。")
     }
