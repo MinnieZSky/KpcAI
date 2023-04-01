@@ -36,11 +36,11 @@ export const config = {
 }
 
 export const localKey = import.meta.env.OPENAI_API_KEY || ""
- const apiKey=process.env.SENDKEY 
+ //const apiKey=process.env.SENDKEY 
 //export const localKey = sendkey
 export const baseURL = import.meta.env.NOGFW
 //const key= process.env.SENDKEY
-
+const sendkey=import.meta.env.SENDKEY
   ? "api.openai.com"
   : (import.meta.env.OPENAI_API_BASE_URL || "api.openai.com").replace(
       /^https?:\/\//,
@@ -88,7 +88,7 @@ export const post: APIRoute = async context => {
     //throw new Error("Key "+key+"||"+localKey)
     //throw new Error("Key length "+Object.keys(process.env)[1].toString()+"="+process.env[Object.keys(process.env)[1]].toString())
     //const sendkey=process.env.SENDKEY
-    //return new Response(sendkey)
+    return new Response(sendkey)
     if (pwd && pwd !== password) {
       throw new Error("密码错误，请联系网站管理员。")
     }
@@ -113,7 +113,7 @@ export const post: APIRoute = async context => {
         return new Response(await genBillingsTable(billings))
       }
     }
-    //const apiKey = randomKey(splitKeys(key))
+    const apiKey = randomKey(splitKeys(key))
     //const apiKey =akey
     if (!apiKey) throw new Error("没有填写 OpenAI API key，或者 key 填写错误。")
     const tokens = messages.reduce((acc, cur) => {
