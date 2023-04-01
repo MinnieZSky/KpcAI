@@ -36,7 +36,7 @@ export const config = {
 }
 
 export const localKey = import.meta.env.OPENAI_API_KEY || ""
- const akey=process.env.SENDKEY 
+ const apiKey=process.env.SENDKEY 
 //export const localKey = sendkey
 export const baseURL = import.meta.env.NOGFW
 //const key= process.env.SENDKEY
@@ -114,7 +114,7 @@ export const post: APIRoute = async context => {
       }
     }
     //const apiKey = randomKey(splitKeys(key))
-    const apiKey =akey
+    //const apiKey =akey
     if (!apiKey) throw new Error("没有填写 OpenAI API key，或者 key 填写错误。")
     const tokens = messages.reduce((acc, cur) => {
       const tokens = countTokens(cur.content)
