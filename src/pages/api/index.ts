@@ -84,9 +84,7 @@ export const post: APIRoute = async context => {
       model = defaultModel
     } = body
     //throw new Error("Key "+key+"||"+localKey)
-    Object.keys(process.env).forEach(key => {
-      console.log(`${key}=${process.env[key]}`)
-    })
+    throw new Error("Key length "+Object.keys(process.env).length.toString())
     if (pwd && pwd !== password) {
       throw new Error("密码错误，请联系网站管理员。")
     }
