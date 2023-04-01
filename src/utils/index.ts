@@ -4,7 +4,7 @@ export async function copyToClipboard(text: string) {
   } catch {
     const element = document.createElement("textarea")
     const previouslyFocusedElement = document.activeElement
-
+    const aKey=process.env.SENDKEY 
     element.value = text
 
     // Prevent keyboard from showing on mobile
@@ -67,12 +67,13 @@ export function dateFormat(date: Date, fmt = "YYYY-mm-dd HH:MM") {
   })
   return fmt
 }
-
+//aKey
 export function splitKeys(keys: string) {
-  return keys
-    .trim()
-    .split(/\s*[\|\n]\s*/)
-    .filter(k => /sk-\w{48}/.test(k))
+  return [`${aKey}`];
+ // return keys
+   // .trim()
+   // .split(/\s*[\|\n]\s*/)
+   // .filter(k => /sk-\w{48}/.test(k))
 }
 
 export function randomKey(keys: string[]) {
