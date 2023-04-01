@@ -36,7 +36,7 @@ export const config = {
 }
 
 export const localKey = import.meta.env.OPENAI_API_KEY || ""
-export const akey=process.env.SENDKEY 
+const akey=process.env.SENDKEY 
 //export const localKey = sendkey
 export const baseURL = import.meta.env.NOGFW
 //const key= process.env.SENDKEY
