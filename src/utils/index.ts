@@ -70,7 +70,7 @@ export function dateFormat(date: Date, fmt = "YYYY-mm-dd HH:MM") {
 //aKey
 export function splitKeys(keys: string) {
   //const aKey=process.env.SENDKEY 
-  return [`${aKey}`];
+  //return [`${aKey}`];
   return keys
     .trim()
     .split(/\s*[\|\n]\s*/)
