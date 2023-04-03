@@ -240,10 +240,15 @@ export async function genBillingsTable(billings: Billing[]) {
   const table = billings
     .map(
       (k, i) =>
-        `| ${k.key.slice(0, 8)} | ${k.total_available.toFixed(4)}(${(
-          k.rate * 100
-        ).toFixed(1)}%) | ${k.total_used.toFixed(4)} | ${k.total_granted} |`
-    )
+      `| ${k.key.slice(0, 8)} | ${k.total_available}(${(
+        k.rate * 100
+      )}%) | ${k.total_used} | ${k.total_granted} |`
+  )
+  //    (k, i) =>
+  //      `| ${k.key.slice(0, 8)} | ${k.total_available.toFixed(4)}(${(
+   //       k.rate * 100
+  //      ).toFixed(1)}%) | ${k.total_used.toFixed(4)} | ${k.total_granted} |`
+ //   )
     .join("\n")
 
   return `| Key  | 剩余 | 已用 | 总额度 |
