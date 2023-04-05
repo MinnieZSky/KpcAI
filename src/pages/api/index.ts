@@ -82,7 +82,7 @@ export const post: APIRoute = async context => {
       password,
       model = defaultModel
     } = body
-     throw new Error(pwd.toString()+"||"+password)
+     throw new Error(pwd+"||"+password)
     if (pwd && pwd !== password) {
       throw new Error("密码错误，请联系网站管理员。")
     }
