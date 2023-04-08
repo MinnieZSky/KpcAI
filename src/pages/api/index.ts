@@ -35,7 +35,7 @@ export const config = {
   ]
 }
 
-export const localKey = import.meta.env.OPENAI_API_KEY || proccess.env.OPENAI_API_KEY
+export const localKey = import.meta.env.OPENAI_API_KEY || ""
 export const baseURL = import.meta.env.NOGFW
 
   ? "api.openai.com"
@@ -135,7 +135,7 @@ export const post: APIRoute = async context => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${apiKey}`
         },
-        timeout: 10000,
+       timeout: !timeout || Number.isNaN(timeout) ? 30000 : timeout,
         method: "POST",
         body: JSON.stringify({
           model: model || "gpt-3.5-turbo",
